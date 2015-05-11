@@ -1,6 +1,6 @@
 Package.describe({
   name: 'johdirr:meteor-git-rev',
-  version: '0.0.2.1',
+  version: '0.0.2',
   summary: 'Get the current git commit hash, tag or branch in Meteor',
   git: 'git@github.com:johdirr/meteor-git-rev.git',
   documentation: 'README.md'
