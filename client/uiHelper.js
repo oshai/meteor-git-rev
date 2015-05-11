@@ -18,7 +18,7 @@ Template.registerHelper('gitRev', function(str) {
     return rev.tag ? rev.tag : null;
   default:
     throw new Meteor.Error(
-      "Git revision not defined", "Available are 'short' or 'long' git commit hash, 'tag' or 'branch'."
+      "Key '" + str + "' not defined", "Available Keys are 'short' or 'long' (git commit hashes), 'tag' or 'branch'."
     );
   }
 });
