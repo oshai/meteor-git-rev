@@ -1,6 +1,7 @@
 # meteor-git-rev
 
-Get the current git commit hash, tag or branch within your Meteor Templates. Based on the NPM [git-rev](https://www.npmjs.com/package/git-rev) Package.
+Get the current git commit hash, tag or branch within your Meteor Templates.  
+Based on the NPM [git-rev](https://www.npmjs.com/package/git-rev) Package.
 
 ## Installation
 
