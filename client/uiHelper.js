@@ -8,14 +8,10 @@ Template.registerHelper('gitRev', function(str) {
   var rev = Revision.find().fetch()[0];
 
   switch (str) {
-  case 'short':
-    return rev.short ? rev.short : null;
-  case 'long':
-    return rev.long ? rev.long : null;
-  case 'branch':
-    return rev.branch ? rev.branch : null;
-  case 'tag':
-    return rev.tag ? rev.tag : null;
+  case 'short': return rev.short;
+  case 'long': return rev.long;
+  case 'branch': return rev.branch;
+  case 'tag': return rev.tag;
   default:
     throw new Meteor.Error(
       "Key '" + str + "' not defined", "Available Keys are 'short' or 'long' (git commit hashes), 'tag' or 'branch'."
