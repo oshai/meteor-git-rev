@@ -11,26 +11,14 @@ var wrappedUpdate = Meteor.bindEnvironment(function(revId, key, value) {
 });
 
 Meteor.startup(function() {
-  if (Revision.find().count() > 0){
-    Revision.remove({});
-  }
+  if (Revision.find().count() > 0) Revision.remove({});
 
   var revId = Revision.insert({});
 
-  gitRev.short(function (value) {
-    wrappedUpdate(revId, 'short', value);
-  });
-
-  gitRev.long(function (value) {
-    wrappedUpdate(revId, 'long', value);
-  });
-
-  gitRev.branch(function (value) {
-    wrappedUpdate(revId, 'branch', value);
-  });
-
-  gitRev.tag(function (value) {
-    wrappedUpdate(revId, 'tag', value);
+  ['short', 'long', 'branch', 'tag'].forEach(function(key) {
+    gitRev[key](function(value) {
+      wrappedUpdate(revId, key, value);
+    });
   });
 });
 
