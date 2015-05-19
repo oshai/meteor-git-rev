@@ -1,7 +1,9 @@
 # meteor-git-rev
 
 Get the current git commit hash, tag or branch within your Meteor Templates.  
-Based on the NPM [git-rev](https://www.npmjs.com/package/git-rev) Package.
+Based on the NPM [git-rev](https://www.npmjs.com/package/git-rev) Package.  
+
+**NOTE** The package needs a git repository (so far)! If you want to use this package on a `stage` or `production` environment then the git repository has to be a part of your deployment process.
 
 ## Installation
 
@@ -21,3 +23,4 @@ This Package gives you an Template Helper called `gitRev`. Embed your current gi
 ### TODO
 
 - tests :)
+- add a fallback solution if the git repository is not part of the deployment
