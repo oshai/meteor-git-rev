@@ -2,7 +2,8 @@ var revisionHandle = Meteor.subscribe("revision");
 
 Template.registerHelper('gitRev', function(str) {
   if (!revisionHandle.ready()) return null;
-
+  if (str === undefined)
+    return rev.short + '@' + rev.branch;
   check (str, String);
 
   var rev = Revision.find().fetch()[0];
